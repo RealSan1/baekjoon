@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-dp = [0] * 10001
+dp = [0] * 4788
 dp[0] = 0
 dp[1] = 1
 
