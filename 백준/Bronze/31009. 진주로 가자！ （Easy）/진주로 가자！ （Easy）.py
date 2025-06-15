@@ -4,21 +4,20 @@ input = sys.stdin.readline
 N = int(input())
 num = 0
 res = 0
-arr = []
+arr = {}
 for _ in range(N):
     D, C = map(str, input().split())
-    if num != 0:
-        if int(C) > num:
-            res += 1
+    C = int(C)
+    if C in arr:
+        arr[C] += 1
     else:
-        arr.append(int(C))
-        
+        arr[C] = 1
+
     if D == 'jinju':
-        num = int(C)
+        num = C
 
-for i in arr:
+for i,j in arr.items():
     if i > num:
-        res += 1
-
+        res += j
 print(num)
 print(res)
