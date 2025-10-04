@@ -2,14 +2,15 @@ import sys
 input = lambda: sys.stdin.readline().rstrip()
 
 N = int(input())
+A = N
+N = N // 2 + 1
 res = []
-l, r = (N+1)//2, (N+1)//2 + 1 
-res.append(l)
+for i in range(N):
+    res.append(N+i)
+    res.append(N-1-i)
 
-for i in range(1, N):
-    if i % 2 == 1:
-        res.append(l + (i+1)//2)
-    else:
-        res.append(l - i//2)
-
-print(*res)
+res = res[:-1]
+if A % 2 == 0:
+    print(*res[:-1])
+else:
+    print(*res)
